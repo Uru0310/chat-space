@@ -6,8 +6,9 @@
 |password|string|null: false|
 |name|string|null: false, index: true|
 ### Association
-- has_many :group
-- has_many :messsage
+- has_many :groups, through: :groups_users
+- has_many :messsages
+- has_many :groups_users
 
 ## groupsテーブル
 |Column|Type|Options|
@@ -15,8 +16,8 @@
 |name|string|null: false|
 ### Association
 - has_many :messages
-- has_many users, through: :groups_users
-- belongs to :group_users
+- has_many :users, through: :groups_users
+- has_many :groups_users
 
 
 ## messagesテーブル
