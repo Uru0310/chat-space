@@ -1,0 +1,36 @@
+.main-chat
+  .main-chat__header
+    .main-chat__header__left
+      .main-chat__header__left__name
+        test
+      .main-chat__header__left__member
+        member:masa
+    .main-chat__header__right
+      .main-chat__header__right__button
+        = link_to "Edit","#" , class: "edit"
+  .main-chat__body
+    .main-chat__body__list
+      .main-chat__body__list__upper
+        .main-chat__body__list__upper__name
+          masa
+        .main-chat__body__list__upper__date
+          2019/11/20(wed) 17:43:01
+      .main-chat__body__list__lower
+        おはよう！
+    .main-chat__body__list
+      .main-chat__body__list__upper
+        .main-chat__body__list__upper__name
+          masa
+        .main-chat__body__list__upper__date
+          2019/11/20(wed) 17:43:01
+      .main-chat__body__list__lower
+        おはよう！
+  .main-chat__footer
+    .main-chat__footer__left-form
+      .main-chat__footer__left-form__message
+        type a message
+      %label{class: "main-chat__footer__left-form__image"}
+        = icon('far', 'image')
+        %input{type: "file"}
+    .main-chat__footer__right-form
+      Send
