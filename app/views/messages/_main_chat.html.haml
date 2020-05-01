@@ -2,12 +2,14 @@
   .main-chat__header
     .main-chat__header__left
       .main-chat__header__left__name
-        test
+        = @group.name
       .main-chat__header__left__member
-        member:masa
+        member:
+        - @group.users.each do |user|
+          =user.name
     .main-chat__header__right
       .main-chat__header__right__button
-        = link_to "Edit","#" , class: "edit"
+        = link_to "Edit",edit_group_path(@group), class: "edit"
   .main-chat__body
     .main-chat__body__list
       .main-chat__body__list__upper
@@ -25,12 +27,23 @@
           2019/11/20(wed) 17:43:01
       .main-chat__body__list__lower
         おはよう！
+  -# .main-chat__footer
+  -#   .main-chat__footer__left-form
+  -#     .main-chat__footer__left-form__message
+  -#     %label{class: "main-chat__footer__left-form__image"}
+  -#       = icon('far', 'image')
+  -#       %input{type: "file"}
+    -# .main-chat__footer__right-form
+    -#   Send
+
+  .messages
+    = render @messages
+
   .main-chat__footer
-    .main-chat__footer__left-form
-      .main-chat__footer__left-form__message
-        type a message
-      %label{class: "main-chat__footer__left-form__image"}
-        = icon('far', 'image')
-        %input{type: "file"}
-    .main-chat__footer__right-form
-      Send
+    = form_for [@group, @message],html:{class:"new-message"} do |f|
+      = f.text_field :content, class: 'new-message__left-form__message', placeholder: 'type a message'
+      .form_mask
+        = f.label :image, class: 'new-message__left-form__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'new-message__right-form'
