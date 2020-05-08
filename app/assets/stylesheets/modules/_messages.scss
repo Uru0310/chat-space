@@ -45,6 +45,7 @@
     .group {
       height: 91px;
       color: #ffffff;
+      text-decoration: none;
       &__name {
         font-size: 15px;
         padding-top: 20px;
@@ -133,7 +134,7 @@
         width: calc(100vw - 100px);
         &__message {
           height: 50px;
-          width: 340px;
+          width: 702px;
           background-color: #ffffff;
           padding: 0px 10px;
           line-height: 50px;
