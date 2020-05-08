@@ -127,14 +127,15 @@
     padding: 20px 40px;
     display: flex;
     .new-message {
+      width: 100%;
       display: flex;
       &__left-form {
         display: flex;
         height: 50px;
-        width: calc(100vw - 100px);
+        width: calc(100% - 100px);
         &__message {
           height: 50px;
-          width: 702px;
+          width: calc(100% - 150px);
           background-color: #ffffff;
           padding: 0px 10px;
           line-height: 50px;
